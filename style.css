@@ -250,13 +250,12 @@ footer{
     padding-top: 40px;
 }
 
-/* Cabeçalho da seção de resultados */
+/* cabeçalho da seção de resultados */
 .search-results-header {
     margin-bottom: 50px;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 20px;
     
-    /* Novas propriedades */
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -331,7 +330,7 @@ footer{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    text-decoration: none; /* Remove sublinhado se usarmos <a> */
+    text-decoration: none; /* Remove sublinhado de <a> */
     color: inherit;
 }
 
@@ -356,14 +355,14 @@ footer{
 }
 
 .recipe-card:hover .recipe-card-image-wrapper img {
-    transform: scale(1.1); /* Efeito de zoom sutil na imagem */
+    transform: scale(1.1); /* zoom sutil ao dar hover na imagem */
 }
 
 .recipe-card-content {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Faz este conteúdo ocupar o espaço restante */
+    flex-grow: 1; /* conteúdo ocupa o espaço restante */
 }
 
 .recipe-card-content h3 {
@@ -381,12 +380,11 @@ footer{
 }
 
 #load-more-btn {
-    /* Reutiliza a classe .btn e adiciona um tamanho de fonte maior */
     font-size: clamp(16px, 1.4vw, 20px);
     padding: 15px 40px;
 }
 
-/* Estilo para quando o botão estiver carregando */
+/* Estilo para quando o botão estiver carregando, não pode clicar de novo */
 #load-more-btn:disabled {
     background-color: #555;
     cursor: wait;
@@ -411,7 +409,6 @@ footer{
     font-size: clamp(16px, 1.4vw, 20px);
 }
 
-/* Efeito hover para o novo botão */
 .btn.btn-secondary:hover {
     background-color: #5a5a5a; 
     opacity: 1; 
@@ -425,7 +422,7 @@ footer{
     color: #777;
 }
 
-/* MÓ LEGAL ESSA ANIMAÇÃOZINHA PRA CARREGANDO */
+/* MÓ LEGAL ESSA ANIMAÇÃOZINHA PRA CARREGANDO, não precisa de gif nem nada, genial */
 .loader {
     width: 50px;
     height: 50px;
@@ -453,8 +450,8 @@ footer{
 
 #recipe-detail-content {
     padding-top: 40px;
-    max-width: 900px; /* Limita a largura do conteúdo para melhor leitura */
-    margin: 0 auto; /* Centraliza o conteúdo */
+    max-width: 900px; 
+    margin: 0 auto; 
 }
 
 .recipe-detail-header {
@@ -502,7 +499,7 @@ footer{
 
 .recipe-columns {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Coluna de ingredientes ocupa 1/3 e instruções 2/3 */
+    grid-template-columns: 1fr 2fr; /* col ingredientes ocupa 1/3 e instruções 2/3 */
     gap: 40px;
 }
 
@@ -522,10 +519,10 @@ footer{
     margin-bottom: 15px;
 }
 
-/* Responsividade para a página de detalhes */
+/* se for mobile, as colunas ficam uma sobre a outra */
 @media (max-width: 768px) {
     .recipe-columns {
-        grid-template-columns: 1fr; /* As colunas ficam uma sobre a outra */
+        grid-template-columns: 1fr; 
     }
 }
 
@@ -598,7 +595,7 @@ footer{
 /* Container principal da receita */
 .recipe-detail-container {
     max-width: 900px;
-    margin: 40px auto; /* 40px de margem em cima/baixo, centralizado nas laterais */
+    margin: 40px auto; 
     padding: 30px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -612,7 +609,7 @@ footer{
     margin-bottom: 25px;
 }
 
-/* Imagem da receita */
+/* imagem da receita */
 .recipe-image img {
     width: 100%;
     height: auto;
@@ -620,17 +617,17 @@ footer{
     margin-bottom: 30px;
 }
 
-/* Container para agrupar ingredientes e instruções */
+/* agrupar ingredientes e instruções */
 .recipe-content {
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas menores */
-    gap: 40px; /* Espaço entre as colunas de ingredientes e instruções */
+    flex-wrap: wrap; /* importante pra itens quebrar para a linha de baixo em telas menores */
+    gap: 40px; 
 }
 
-/* Estilos para as seções de ingredientes e instruções */
+
 .ingredients, .instructions {
-    flex: 1; /* Faz com que ambas as seções tentem ocupar o mesmo espaço */
-    min-width: 300px; /* Largura mínima antes de quebrar a linha */
+    flex: 1; /* ambas as seções tentem ocupar o mesmo espaço */
+    min-width: 300px; /*  min width antes de quebrar a linha */
 }
 
 .recipe-content h2 {
@@ -642,7 +639,7 @@ footer{
 }
 
 .recipe-content h2 i {
-    margin-right: 10px; /* Espaço entre o ícone e o texto do título */
+    margin-right: 10px; 
 }
 
 .recipe-content h3 {
@@ -652,7 +649,7 @@ footer{
     margin-bottom: 10px;
 }
 
-/* Estilos para as listas de ingredientes e instruções */
+/* listas de ingredientes e instruções */
 .ingredients ul, .instructions ol {
     list-style-position: inside;
     padding-left: 5px;

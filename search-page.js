@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- CONSTANTES E VARIÁVEIS DE ESTADO ---
+
     const API_KEY = "1686c322155b4041a883521d2f071057";
     const RESULTADOS_POR_PAGINA = 12;
 
-    // Elementos do DOM
     const searchPageContent = document.getElementById('search-page-content');
     const loadMoreContainer = document.getElementById('load-more-container');
     
-    // Variáveis para gerenciar o estado da página
+    // estado da página
     let currentPage = 1;
     let currentQuery = '';
     let totalResults = 0;
-    let isLoading = false; // Para evitar múltiplos cliques enquanto carrega
+    let isLoading = false; // impede multiplos cliques enquanto ainda tá carregando
     let currentMinProtein = 20;
 
     // assim que muda pra search.html => carrega search-page.js => assim que que carrega search-page.js chama essa função initSearchPage()
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } 
         else if (query) {
             currentQuery = query; // Define o estado da busca atual
-            fetchAndDisplayRecipes(currentQuery, currentPage, true);
+            fetchAndDisplayRecipes(currentQuery, currentPage, true); //busca inicial = true
         } 
         else {
             // Se não houver nenhum parâmetro conhecido
@@ -37,9 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // sa poha toda SÓ pra parte fucking proteina vegetariana
-    // Substitua sua função fetchFilteredSearch por esta versão completa
-
+    // sa poha toda SÓ pra parte fucking proteina vegetariana 
     async function fetchFilteredSearch(isInitialSearch = false) {
         if (isLoading) return;
         isLoading = true;
@@ -49,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // A URL agora usa a variável de estado 'currentMinProtein'
+
             const url = `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&minProtein=${currentMinProtein}&sort=random&number=${RESULTADOS_POR_PAGINA}&apiKey=${API_KEY}`;
             
             const response = await fetch(url);
@@ -57,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const data = await response.json();
             
-            if (isInitialSearch) {
+            if (isInitialSearch) { // se for busca inicial, limpa tudo e substitui
                 totalResults = data.totalResults;
                 searchPageContent.innerHTML = '';
                 
@@ -82,18 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 searchPageContent.insertAdjacentHTML('beforeend', headerHTML);
                 
-                // =======================================================
-                // ADICIONA O EVENTO AO FORMULÁRIO RECÉM-CRIADO
-                // =======================================================
+                // adicioar evento ao formulário (number) de proteína
                 const proteinForm = document.getElementById('protein-filter-form');
                 if(proteinForm) {
                     proteinForm.addEventListener('submit', (event) => {
-                        event.preventDefault(); // Previne o recarregamento da página
+                        event.preventDefault(); // previne o recarregamento da página (não entendi como funcinoa relamente só sei que precisa)
                         const newMinProtein = document.getElementById('min-protein-input').value;
                         
-                        // Atualiza o estado e refaz a busca inicial
-                        currentMinProtein = parseInt(newMinProtein) || 20; // Usa 20 como fallback
-                        fetchFilteredSearch(true); // O 'true' limpa os resultados antigos
+                        // atualiza o estado e refaz a busca inicial
+                        currentMinProtein = parseInt(newMinProtein) || 20; // 20 como fallback
+                        fetchFilteredSearch(true); // limpa os resultados antigos
                     });
                 }
             }
@@ -107,12 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * Função central para buscar e exibir receitas.
-     * @param {string} query - O termo de busca.
-     * @param {number} page - O número da página a ser buscada.
-     * @param {boolean} isInitialSearch - Se é a primeira busca (para limpar a página).
-     */
+    // ============== buscar e exibir receitas ==============
+    // query -  termo de busca
+    // page - número da página (não muda, só anexa a busca anterior).]
+    // isInitialSearch - if (primeira busca) => limpar a página
     async function fetchAndDisplayRecipes(query, page, isInitialSearch = false) {
         if (isLoading) return; // já estiver carregando, não faz nada
         isLoading = true;
@@ -121,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isInitialSearch) {
             displayFeedback('<div class="loader"></div><p>Searching for recipes...</p>');
         } else if (document.getElementById('load-more-btn')) {
+            
             //botão para o estado de "carregando"
             document.getElementById('load-more-btn').textContent = 'Loading...';
             document.getElementById('load-more-btn').disabled = true;
@@ -129,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const offset = (page - 1) * RESULTADOS_POR_PAGINA;
             
-            let response;
+            let response; // NÃO DECLARAR VARIÁIS DENTRO DE BLOCOS IF, ELSE, FOR, SE NÃO SOME QUANDO SAI
 
             if(query !== "random" && query !== "randomVeg") {
                 response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${API_KEY}&number=${RESULTADOS_POR_PAGINA}&offset=${offset}`);
@@ -188,28 +182,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    /**
-     * Anexa os cartões de receita ao grid.
-     */
-    // Em search-page.js
-
+    // anexa os cartões de receita ao grid em search-page.js
     function appendRecipes(recipes, isRandom) {
         const resultsContainer = document.getElementById('results-container-grid');
         if (!resultsContainer) return;
 
-        // ============== CORREÇÃO APLICADA AQUI ==============
-        // Primeiro, checa se 'recipes' é nulo, indefinido ou se o array está vazio.
-        // A verificação '!recipes' pega os casos de null e undefined de forma segura.
+        
+        // recipes não pode ser nulo, indefinido ou vazio
         if (!recipes || recipes.length === 0) {
-            // Mostra a mensagem de "não encontrado" apenas se for a primeira página.
+            // "não encontrado" (if and only if) primeira página
             if (currentPage === 1) {
                 displayFeedback("<h2>Nothing was found</h2><p>Your API quota may have been reached or there are no results for this search.</p>", true);
             }
-            // Também remove os botões se não houver mais receitas
-            updateActionButtons(isRandom, true); // O 'true' indica que não há mais resultados
+            // remover botões (see more) se não houver mais receitas
+            updateActionButtons(isRandom, true); // true => não há mais resultados
             return;
         }
-        // ======================================================
 
         recipes.forEach(recipe => {
             const recipeCard = `
@@ -228,8 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateActionButtons(isRandom);
     }
 
-    // Também vamos fazer um pequeno ajuste em `updateActionButtons` para lidar com o fim dos resultados.
-    // Substitua sua função `updateActionButtons` por esta:
     function updateActionButtons(isRandom, noMoreResults = false) {
         loadMoreContainer.innerHTML = '';
 
@@ -247,8 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             seeMoreBtn.addEventListener('click', () => {
                 if (isRandom) {
-                    // Para busca aleatória, a página não incrementa, apenas busca de novo
-                    fetchAndDisplayRecipes(currentQuery, 1, true); // Recarrega a página com novas receitas
+                    // se for busca aleatória, página não incrementa, apenas busca de novo
+                    fetchAndDisplayRecipes(currentQuery, 1, true); // recarrega a página com novas receitas
                 } else {
                     currentPage++;
                     fetchAndDisplayRecipes(currentQuery, currentPage);
@@ -257,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadMoreContainer.appendChild(seeMoreBtn);
         }
 
-        // O botão "Voltar ao Topo" pode aparecer mesmo se não houver mais resultados
+        // o botão  de voltar ao topo pode aparecer mesmo se não houver mais resultados
         if (currentPage > 1 || document.querySelector('.recipe-card')) {
             const backToTopBtn = document.createElement('button');
             backToTopBtn.id = 'back-to-top-btn';

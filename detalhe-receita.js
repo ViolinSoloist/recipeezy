@@ -2,22 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_KEY = "1686c322155b4041a883521d2f071057"; // Sua chave de API
     const recipeDetailContent = document.getElementById('recipe-detail-content');
 
-    /**
-     * Pega o ID da receita da URL.
-     */
     function getIdFromUrl() {
         const params = new URLSearchParams(window.location.search);
         return params.get('id');
     }
 
-    /**
-     * Busca os detalhes da receita na API.
-     */
     async function fetchRecipeDetails(id) {
-        // Mostra um loader enquanto busca os dados
+        
+        // loader enquanto busca os dados
         recipeDetailContent.innerHTML = '<div class="feedback-container"><div class="loader"></div></div>';
 
-        // O endpoint para buscar por ID é /recipes/{id}/information
+        // /recipes/{id}/information
         const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`;
 
         try {
@@ -33,23 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * Exibe os detalhes da receita na página.
-     */
+    // exibir detalhes da receita na página
     function displayRecipeDetails(recipe) {
         recipeDetailContent.innerHTML = ''; // Limpa o loader
 
-        // Gera o HTML para a lista de ingredientes
+        // .map => "iterador" 
+        // array de objetos (ingredientes)
+        // pra cada ingrediente, gera uma string de item de lista
+        // no final, ingredientsHTML é um array de strings
+        // .join('') junta as strings, agora todos os itens de pesquisa são uma única string
         const ingredientsHtml = recipe.extendedIngredients.map(ingredient => 
             `<li>${ingredient.original}</li>`
         ).join('');
 
-        // Gera o HTML para o passo a passo das instruções
+        // mesma coisa, mas para instruções
         const instructionsHtml = recipe.analyzedInstructions[0]?.steps.map(step => 
             `<li>${step.step}</li>`
         ).join('') || '<li>No instructions available.</li>';
 
-        // Monta o HTML final da página de detalhes
         const detailHtml = `
             <div class="recipe-detail-header">
                 <h1>${recipe.title}</h1>
@@ -81,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         recipeDetailContent.innerHTML = detailHtml;
     }
 
-    // Inicia o processo quando a página carrega
+    // inicia o processo quando a página carrega
     const recipeId = getIdFromUrl();
     if (recipeId) {
         fetchRecipeDetails(recipeId);

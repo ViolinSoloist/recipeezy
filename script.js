@@ -1,12 +1,12 @@
-// script.js - Código específico para a PÁGINA INICIAL (index.html)
+// script.js - PÁGINA INICIAL (index.html)
 
 document.addEventListener('DOMContentLoaded', () => {
-    // A única funcionalidade que só existe na home é o scroll para a seção vegetariana.
+    // única funcionalidade que só existe na home é o scroll para a seção vegetariana.
     const vegNavButton = document.getElementById('nav-veg-btn');
     const vegetarianSection = document.getElementById('vegetarian-food');
     const header = document.getElementById('main_header');
 
-    // Verifica se os elementos existem antes de adicionar o evento
+    // verifica se os elementos existem antes de adicionar o evento
     if (vegNavButton && vegetarianSection && header) {
         vegNavButton.addEventListener('click', () => {
             const headerHeight = header.offsetHeight;

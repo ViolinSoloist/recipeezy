@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- LÓGICA DO HEADER (COMUM) ---
+    
+    // ---  HEADER  (aparece some)---
     const header = document.getElementById('main_header');
-    if (header) { // Adicionamos uma verificação para segurança
+    if (header) { 
         let lastScrollY = window.scrollY;
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY && currentScrollY > 100) { // Esconde apenas se rolar mais de 100px
+            if (currentScrollY > lastScrollY && currentScrollY > 100) { // esconde se rolar mais de 100px
                 header.classList.add('header-hidden');
             } else {
                 header.classList.remove('header-hidden');
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // API fetch random
     const discoverBtn = document.getElementById("landing-page-btn");
     if(discoverBtn) {
         discoverBtn.addEventListener('click', () =>{
@@ -71,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // API fetch complexSearch com filtro vegetariano
     const seeMoreVegBtn = document.getElementById("veg-btn");
     if(seeMoreVegBtn) {
         seeMoreVegBtn.addEventListener("click", () => {
@@ -78,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // API fetch proteína vegetariana
     const complementBtn = document.getElementById("complement-btn");
     if (complementBtn) {
         complementBtn.addEventListener("click", () => {
