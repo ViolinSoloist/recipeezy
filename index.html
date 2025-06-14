@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipeezy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="black-strips">
+        
+        <main>
+            
+            <header id="main_header">
+                <p  onclick="carregarHome()" id="site-name">Recipeezy</p>
+
+                <nav>
+                    <div class="page-btn" id="nav-veg-btn">Vegetarian Food</div>
+                    <!-- <div class="page-btn">Page 2</div>
+                    <div class="page-btn">Page 3</div> -->
+                    <button id="search-btn" class="btn">Search</button>
+                </nav>
+
+            </header>
+            
+            <div id="conteudo-pagina">
+                <section id="landing-page-section">
+                    <p id="landing-page-title">Cook any recipes with Recipeezy</p>
+                    <p class="texto-normal" style="padding-bottom: 20px;">All types of recipes in one place. Find the one that matches your taste or discover new recipes.</p>
+                    <button class="btn" id="landing-page-btn">Discover</button>
+                </section>
+
+                <img src="src/imagens/imagem_provisoria.png" id="main-img" alt="Decoration image">
+
+                <section id="vegetarian-food">
+                    <p class="section-heading">Vegetarian Food</p>
+
+                    <div class="container-horizontal">
+                        <div id="textos-vegetariano">
+                            <p class="subheading">Natural food</p>
+                            <p class="texto-normal2">Enjoy homemade, natural recipes without animal origin. A meat-free diet can bring a lot of benefits.</p>
+                            <p class="subheading">Complement</p>
+                            <p class="texto-normal2">It's also important to seek for other ways to maintain your protein intake.</p>
+                            <button class="btn" id="veg-btn">See more</button>
+                            <button class="btn" id="complement-btn">Complement my diet</button>
+                
+                        </div>
+                        <img src="src/imagens/veg_food1.jpg" id="veg-img" alt="Some vegetarian meal image">
+                    </div>
+
+                </section>
+
+                <p id="div-invisible"></p>
+            </div>
+
+        </main>
+
+        <footer>
+            
+            <div id="footer-left">
+                
+                <p id="footer-site-name">About me</p>
+                
+                <div id="socials-div">
+                    <a href="https://www.linkedin.com/in/erik-min-soo-chung-222098364/"> <img class="icon" src="src/imagens/linkedin.png"> </a>
+                    <a href="https://www.youtube.com/@erikchungviolinsoloist1429"> <img class="icon" src="src/imagens/youtube.png"> </a>
+                    <a href="https://www.instagram.com/erik.minsoo/"> <img class="icon" src="src/imagens/insta.png"> </a>
+                    <a href="https://github.com/ViolinSoloist"> <img class="icon" id="github-icon" src="src/imagens/icone-github-grise.png"> </a>
+                </div>
+
+            </div> 
+
+            <div id="footer-right">
+                <article class="article-topic" class="texto-normal2">
+                    About site
+                    <a href="https://spoonacular.com/food-api" class="texto-normal2 subtopic">Spoonacular API</a>
+                    <a href="https://violinsoloist.github.io/" class="texto-normal2 subtopic">GitHub</a>
+                    <a href="https://www.figma.com" class="texto-normal2 subtopic hover">UI Desing</a> 
+                </article>
+
+                <article class="article-topic" class="texto-normal2">
+                    USP codelab Sanca
+                    <a href="https://codelab.icmc.usp.br/" class="texto-normal2 subtopic">Home</a>
+                    <a href="https://github.com/USPCodeLabSanca" class="texto-normal2 subtopic">GitHub</a>
+                    <a href="https://uspcodelabsanca.notion.site/Projeto-do-Curso-1f18def36c1680e182e1c0ac4aa8ab7d" class="texto-normal2 subtopic">Project</a> 
+                </article>
+
+                <article class="article-topic" class="texto-normal2">
+                    USP ICMC
+                    <a href="https://www.icmc.usp.br/" class="texto-normal2 subtopic">Home</a>
+                    <a href="https://www.instagram.com/icmc.usp/?hl=en" class="texto-normal2 subtopic">Instagram</a>
+                    <a href="https://br.linkedin.com/school/icmc-usp/" class="texto-normal2 subtopic">Linkedin</a> 
+                </article>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <div id="search-modal-overlay" class="modal-overlay hidden"> 
+        <div id="search-modal-content"> 
+            <form id="search-form"> 
+                <input type="text" id="search-input" placeholder="What is in your mind?" autocomplete="off">
+                <button type="submit" class="btn" id="confirm-search-btn">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>   <script src="script.js"></script>
+</body>
+</html>

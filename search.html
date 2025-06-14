@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Recipeezy</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="black-strips">
+        <main>
+            <header id="main_header">
+                <p id="site-name">Recipeezy</p>
+
+                <nav>
+                    <!-- <div class="page-btn" id="nav-veg-btn">Vegetarian Food</div> -->
+                    <!-- <div class="page-btn">Page 2</div>
+                    <div class="page-btn">Page 3</div> -->
+                    <button id="search-btn" class="btn">Search</button>
+                </nav>
+            </header>
+            
+            <div id="search-page-content"></div>
+            <div id="load-more-container"></div>
+            
+        </main>
+        
+        <footer id="main_footer">
+            <div id="footer-left">
+                
+                <p id="footer-site-name">About me</p>
+                
+                <div id="socials-div">
+                    <a href="https://www.linkedin.com/in/erik-min-soo-chung-222098364/"> <img class="icon" src="src/imagens/linkedin.png"> </a>
+                    <a href="https://www.youtube.com/@erikchungviolinsoloist1429"> <img class="icon" src="src/imagens/youtube.png"> </a>
+                    <a href="https://www.instagram.com/erik.minsoo/"> <img class="icon" src="src/imagens/insta.png"> </a>
+                    <a href="https://github.com/ViolinSoloist"> <img class="icon" id="github-icon" src="src/imagens/icone-github-grise.png"> </a>
+                </div>
+
+            </div> 
+
+            <div id="footer-right">
+                <article class="article-topic" class="texto-normal2">
+                    About site
+                    <a href="https://spoonacular.com/food-api" class="texto-normal2 subtopic">Spoonacular API</a>
+                    <a href="https://violinsoloist.github.io/" class="texto-normal2 subtopic">GitHub</a>
+                    <a href="https://www.figma.com" class="texto-normal2 subtopic hover">UI Desing</a> 
+                </article>
+
+                <article class="article-topic" class="texto-normal2">
+                    USP codelab Sanca
+                    <a href="https://codelab.icmc.usp.br/" class="texto-normal2 subtopic">Home</a>
+                    <a href="https://github.com/USPCodeLabSanca" class="texto-normal2 subtopic">GitHub</a>
+                    <a href="https://uspcodelabsanca.notion.site/Projeto-do-Curso-1f18def36c1680e182e1c0ac4aa8ab7d" class="texto-normal2 subtopic">Project</a> 
+                </article>
+
+                <article class="article-topic" class="texto-normal2">
+                    USP ICMC
+                    <a href="https://www.icmc.usp.br/" class="texto-normal2 subtopic">Home</a>
+                    <a href="https://www.instagram.com/icmc.usp/?hl=en" class="texto-normal2 subtopic">Instagram</a>
+                    <a href="https://br.linkedin.com/school/icmc-usp/" class="texto-normal2 subtopic">Linkedin</a> 
+                </article>
+
+            </div>
+
+        </footer>
+    </div>
+
+    <div id="search-modal-overlay" class="modal-overlay hidden"> 
+    
+    </div>
+    
+    <script src="main.js"></script>  <script src="search-page.js"></script>
+    
+</body>
+</html>

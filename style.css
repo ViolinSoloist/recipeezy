@@ -1,0 +1,578 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    font-family: 'Inter';
+    font-size: clamp(12px, 1.7vw, 1.7vw);
+    margin: 0;
+}
+
+#black-strips {
+    width: 93.7%;
+    margin: 0 auto; 
+    padding: 0;
+    background-color: white;
+    min-height: 100vh; /* cobrir tela toda */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    padding: 100px 7vw 0 7vw;
+    height: fit-content
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 93.7%; 
+    margin: 0 auto; 
+    background-color: rgb(245, 245, 245); 
+    z-index: 500; 
+    transition: transform 0.4s ease-in-out; 
+
+    /* Suas propriedades existentes */
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: xx-large;
+    padding: 0 7vw; 
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+}
+
+.btn {
+    font-size: clamp(10px, 1.5vw, 1.5vw);
+    color: white;
+    padding: clamp(10px, 1.2vw, 1.2vw) clamp(15px, 1.8vw, 1.8vw) clamp(10px, 1.2vw, 1.2vw) clamp(15px, 1.8vw, 1.8vw);
+    border-radius: 8px;
+    background-color: black;
+}
+
+.btn:hover {
+    opacity: 70%;
+    cursor: pointer;    
+}
+
+.page-btn {
+    display: flex;
+    align-self: center;
+    font-size: clamp(12px, 1.4vw, 1.4vw);
+    font-weight: 500;
+}
+
+.page-btn:hover {
+    text-decoration: underline;
+    opacity: 70%;
+    cursor: pointer;
+}
+
+#site-name {
+    font-size: clamp(20px, 2.8vw, 2.8vw);
+}
+
+#site-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#landing-page-section {
+    width: clamp(300px, 52.5vw, 52.5vw);
+    /* background-color: antiquewhite; */
+    height: fit-content;
+    margin-bottom: clamp(50px, 5vw, 5vw);
+}
+
+#landing-page-title {
+    font-size: clamp(32px, 4.6vw, 4.6vw);
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.texto-normal {
+    color: rgb(73, 73, 73);
+    margin: 0;
+    margin-bottom: 15px;
+
+}
+
+.texto-normal2 {
+    color: rgb(87, 87, 87);
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+
+
+#landing-page-btn {
+    font-size: clamp(12px, 1.7vw, 1.7vw);
+    font-weight: 0;
+    padding: clamp(14px, 1.5vw, 2vw) clamp(18px, 2.3vw, 2.3vw) clamp(14px, 1.5vw, 2vw) clamp(18px, 2.3vw, 2.3vw);
+    /* max-width: 140px; */
+}
+
+#main-img {
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+/* ========= comida vegetariana =========*/
+#textos-vegetariano {
+    width: 50%;
+}
+
+.container-horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.section-heading{
+    font-size: clamp(30px, 3.6vw, 3.6vw);
+    font-weight: bold;
+    margin-bottom: 54px;
+}
+
+.subheading {
+    font-size: 24px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+
+#veg-img{
+    width: 45%;
+    border-radius: 8px;
+}
+
+#complement-btn {
+    background-color: #cdcccc;
+    color: black;
+}
+
+
+#div-invisible{
+    height: 40px;
+    margin: 0;
+}
+
+/* ======= footer ======= */
+footer{
+    background-color: #f6f6f6;
+    padding: 20px 7vw 0px 7vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#footer-left {
+    width: 40%;
+}
+
+#footer-site-name {
+    font-size: clamp(12px, 1.4vw, 1.4vw);
+}
+
+#socials-div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#github-icon {
+    max-width: 25px;
+    margin-left: 6px;
+}
+
+.icon:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+#footer-right {
+    padding-bottom: 30px;
+    padding-right: 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 60vw;
+    gap: 7vw;
+}
+
+.article-topic {
+    color: black;
+    font-size: clamp(10px, 1.1vw, 1.1vw);
+    height: 90%;
+    margin-top: 12px;
+    margin-bottom: 0;
+    /* padding-bottom: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: flex-start;
+}
+
+.subtopic{
+    font-size: clamp(10px, 1.1vw, 1.1vw);
+    text-decoration: none; 
+    margin: 0;
+}
+
+.subtopic:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 85%;
+}
+
+
+/* ===================================== */
+/* =========== PÁGINA BUSCA ============ */
+/* ===================================== */
+
+/*container principal*/
+#search-page-content {
+    padding-top: 40px;
+}
+
+/* Cabeçalho da seção de resultados */
+.search-results-header {
+    margin-bottom: 50px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    
+    /* Novas propriedades */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap;              
+    gap: 20px;
+}
+
+#protein-filter-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#protein-filter-form label {
+    font-size: clamp(14px, 1.2vw, 16px);
+    font-weight: 500;
+    color: #333;
+}
+
+#protein-filter-form input {
+    width: 70px; 
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: 'Inter', sans-serif;
+}
+
+#protein-filter-form button {
+    padding: 8px 15px; 
+    font-size: 14px;
+}
+
+.search-results-header #header-left {
+    width: fit-content;
+}
+
+#header-left h1 {
+    font-size: clamp(28px, 3.2vw, 48px);
+    margin: 0;
+    font-weight: 700;
+    width: fit-content;
+}
+
+#header-left p {
+    font-size: clamp(14px, 1.2vw, 18px);
+    color: #555;
+    margin: 5px 0 0 0;
+    width: fit-content;
+}
+
+
+#header-right .page-nav-btn {
+    padding: 0.5vw 0.6vw 0.5vw 0.6vw;
+    background-color: #444444;
+}
+
+/* Grid cartões de receita */
+#results-container-grid {
+    display: grid;
+    /* colunas de no mínimo 280px, peguei inspiração da seção de vídeos do youtube pc */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+
+.recipe-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /* Remove sublinhado se usarmos <a> */
+    color: inherit;
+}
+
+.recipe-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+.recipe-card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.recipe-card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.4s ease;
+}
+
+.recipe-card:hover .recipe-card-image-wrapper img {
+    transform: scale(1.1); /* Efeito de zoom sutil na imagem */
+}
+
+.recipe-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz este conteúdo ocupar o espaço restante */
+}
+
+.recipe-card-content h3 {
+    font-size: clamp(18px, 1.5vw, 20px);
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* ========= SEE MORE =============*/
+#load-more-container {
+    text-align: center;
+    padding: 40px 0;
+}
+
+#load-more-btn {
+    /* Reutiliza a classe .btn e adiciona um tamanho de fonte maior */
+    font-size: clamp(16px, 1.4vw, 20px);
+    padding: 15px 40px;
+}
+
+/* Estilo para quando o botão estiver carregando */
+#load-more-btn:disabled {
+    background-color: #555;
+    cursor: wait;
+    opacity: 0.7;
+}
+
+/* ===================== botão voltar ao topo =====================*/
+#load-more-container {
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 1.5vw; 
+    padding: 3vw;
+}
+
+
+.btn.btn-secondary {
+    background-color: #707070; 
+    color: white; 
+    padding: 14px 32px;
+    font-size: clamp(16px, 1.4vw, 20px);
+}
+
+/* Efeito hover para o novo botão */
+.btn.btn-secondary:hover {
+    background-color: #5a5a5a; 
+    opacity: 1; 
+}
+
+
+/* ============== Feedback usuário (carregando, erro, sem resultados) ============ */
+.feedback-container {
+    text-align: center;
+    padding: 80px 20px;
+    color: #777;
+}
+
+/* MÓ LEGAL ESSA ANIMAÇÃOZINHA PRA CARREGANDO */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* ========= efeitos =========== */
+.header-hidden {
+    transform: translateY(-100%); /* Desliza o header para cima em 100% de sua altura */
+}
+
+
+
+/* ================================== */
+/* ======= ESTILOS DO MODAL ========= */
+/* ================================== */
+.hidden {
+    display: none !important;
+}
+
+/* Fundo preto */
+.modal-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000; 
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-top: 15vh; 
+}
+
+/* caixa branca (main-container) */
+#search-modal-content {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 600px; 
+    top: 50%;
+    left: 50%;
+}
+
+/* formulário dentro do modal */
+#search-form {
+    display: flex;
+    width: 100%;
+    gap: 15px; 
+}
+
+/* campo de texto para digitar */
+#search-input {
+    flex-grow: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+#search-input:focus {
+    border-color: #333;
+}
+
+/* botão de busca do modal */
+#confirm-search-btn {
+    flex-shrink: 0; /* não pode encolher */
+}
+
+/* ===================================== */
+/* ============= MOBILE CSS ============ */
+/* ===================================== */
+
+@media only screen and (max-width: 600px) {
+    
+    .page-btn {
+        display: flex;
+        align-self: center;
+        flex-wrap: wrap;
+        width: 80px;
+        font-size: clamp(12px, 1.4vw, 1.4vw);
+        font-weight: 500;
+    }
+
+    .container-horizontal {
+        flex-direction:column-reverse;
+        align-items: start;
+    }
+
+    #textos-vegetariano {
+        width: 100%;
+    }
+
+    #veg-img {
+        width: 80%;
+        align-self: center;
+        margin-bottom: 30px;
+    }
+
+    .section-heading {
+        margin: auto;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        width: fit-content;
+    }
+
+
+    .subheading {
+        font-size: 20px;
+    }
+
+    .icon {
+        width: 20px;
+    }
+
+    #footer-right {
+        padding-right: 0;
+    }
+
+    #socials-div {
+        gap: 0px;
+    }
+
+    #github-icon {
+        max-width: 13px;
+        margin-left: 4px;
+    }
+
+    #veg-btn {
+        margin-right: 20px;
+    }
+
+}
