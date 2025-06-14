@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         recipes.forEach(recipe => {
             const recipeCard = `
-                <a href="#" class="recipe-card">
+                <a href="detalhe-receita.html?id=${recipe.id}" class="recipe-card">
                     <div class="recipe-card-image-wrapper">
                         <img src="${recipe.image}" alt="${recipe.title}">
                     </div>
