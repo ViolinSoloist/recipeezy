@@ -55,6 +55,6 @@ Como dito anteriormente, essa exibe as principais informações necessárias: Im
 A página não tem muito segredo: apresenta o header e o footer como todas as outras páginas e, basicamente, só CSS pra deixar tudo bonitinho (um terço de espaço para os ingredientes e dois terços para o modo de preparo).
 
 ### Conclusão
-Em suma, foi uma experiência de bastante aprendizado (e bastante corrida, pois tive que me esforçar bastante pra entregar dentro do prazo...)
+Em suma, foi uma experiência de bastante aprendizado (e bastante corrida).
 Primeira vez trabalhando com APIs e algumas outras coisas. Também aprendi outros pequenos fatos interessantes.
 É isso! Aproveitem para visitar: https://violinsoloist.github.io/recipeezy e boa cozinhada! :)
