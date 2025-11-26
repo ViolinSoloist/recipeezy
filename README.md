@@ -1,5 +1,5 @@
 # Recipeezy
-Site de receitas, projeto para Codelabs Sanca usando Spoonacular API (plano gratuito, aproximadamente 100 fetchs diários).
+Site de receitas, usando Spoonacular API (plano gratuito, aproximadamente 100 fetchs diários).
 (O site seria originalmente em português, porém a API é em inglês e extremamente completa, então quis usá-la e, portanto, fiz o site em inglês porque as receitas estavam em tal língua).  
 
 Feito usando HTML, JavaScript e CSS puro, sem bibliotecas.
